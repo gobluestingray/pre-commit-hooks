@@ -25,7 +25,8 @@ def find_git_conflicts(filename):
         git_conflicts = []
         for line_number, line in enumerate(file_checked, start=1):
             if has_contained_conflict(line) or has_exact_conflict(line):
-                git_conflicts.append("{}:{} | {}".format(filename, line_number, line))
+                num_spaces = ' ' * (6 - len(str(line_number)))
+                git_conflicts.append("{}:{}{}{}".format(filename, line_number, num_spaces, line.lstrip()))
 
         return git_conflicts
 

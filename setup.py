@@ -26,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'forbid_git_conflicts = hooks.forbid_git_conflicts:main',
+            'forbid_set_trace = hooks.forbid_set_trace:main',
         ],
     },
 )
