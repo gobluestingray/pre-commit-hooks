@@ -3,3 +3,4 @@ repos:
     rev: master
     hooks:
     -   id: forbid-git-conflicts
+    -   id: forbid-set-trace
