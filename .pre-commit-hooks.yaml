@@ -1,0 +1,6 @@
+-   id: forbid-git-conflicts
+    name: Check for leftover Git conflicts
+    description: Forbid files containing Git conflict markers to be committed
+    entry: forbid_git_conflicts
+    language: python
+    files: ''
