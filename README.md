@@ -53,10 +53,9 @@ Git Conflicts Detected in file(s):
 Simple hook which iterates over all staged files to check for any lines that
 have left over Git conflict markers.
 
-* Does the line contain `<<<<<<<` or `>>>>>>>`?
-* Is the line an exact match for `=======` or `HEAD`?
+* Does any line contain `pdb` or `set_trace`?
 
-If either of those two criteria are found, pre-commit will fail the commit attempt.
+If either of those criteria are found, pre-commit will fail the commit attempt.
 
 #### Failure Output Example
 
