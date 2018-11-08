@@ -18,7 +18,8 @@ def find_set_trace_conflicts(filename):
         conflicts = []
         for line_number, line in enumerate(file_checked, start=1):
             if has_conflict(line):
-                conflicts.append("{}:{} | {}".format(filename, line_number, line))
+                num_spaces = ' ' * (6 - len(str(line_number)))
+                conflicts.append("{}:{}{}{}".format(filename, line_number, num_spaces, line.lstrip()))
 
         return conflicts
 

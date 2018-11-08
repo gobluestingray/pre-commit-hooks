@@ -4,3 +4,9 @@
     entry: forbid_git_conflicts
     language: python
     files: ''
+-   id: forbid-set-trace
+    name: Check for leftover debugging statements
+    description: Forbid files containing debugging imports/statements to be committed
+    entry: forbid_set_trace
+    language: python
+    files: ''
