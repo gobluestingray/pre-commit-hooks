@@ -1,6 +1,6 @@
 from __future__ import print_function
 import argparse, sys
-from helpers import is_textfile
+from .helpers import is_textfile
 
 
 CONTAINS_CONFLICT_STRINGS = ['<<<<<<<',
