@@ -16,7 +16,7 @@ def is_textfile(filename, blocksize=512):
     """
     if any(filename.endswith(ext) for ext in KNOWN_BINARY_FILE_EXTS):
         return False
-    return is_text(open(filename, "rb").read(blocksize))
+    return is_text(open(filename, "rb").read(blocksize))  # pylint: disable=consider-using-with
 
 
 def is_text(content):
