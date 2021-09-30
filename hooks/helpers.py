@@ -1,7 +1,10 @@
 # Taken from: http://code.activestate.com/recipes/173220-test-if-a-file-or-string-is-text-or-binary/
 
-KNOWN_BINARY_FILE_EXTS = ['.pdf',
-                          '.pyc', ]
+KNOWN_BINARY_FILE_EXTS = [
+    ".pdf",
+    ".pyc",
+]
+
 
 def is_textfile(filename, blocksize=512):
     """
@@ -13,7 +16,8 @@ def is_textfile(filename, blocksize=512):
     """
     if any(filename.endswith(ext) for ext in KNOWN_BINARY_FILE_EXTS):
         return False
-    return is_text(open(filename, 'rb').read(blocksize))
+    return is_text(open(filename, "rb").read(blocksize))
+
 
 def is_text(content):
     """
@@ -27,7 +31,7 @@ def is_text(content):
         return True
     # Try to decode as UTF-8
     try:
-        content.decode('utf8')
+        content.decode("utf8")
     except UnicodeDecodeError:
         return False
     else:
