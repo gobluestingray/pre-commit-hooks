@@ -20,11 +20,34 @@ repos:
     -   id: forbid-set-trace
 ```
 
+### Disabling and Enabling Hooks within Files
+
+The below comments allow disabling and re-enabling of the `forbid-git-conflicts`
+and `forbid-set-trace` hooks, using comments to turn it off and on, similar
+to `black`'s `#fmt: off` and `#fmt: on`. These options can be useful for
+ignoring "bad content" that is being flagged as a false positive, such as
+comments, documentation, etc.
+
+```
+# forbid-git-conflicts: off
+"<<<<<<<"
+# forbid-git-conflicts: on
+```
+
+```
+# forbid-set-trace: off
+__import__("ipdb").set_trace()
+# forbid-set-trace: on
+```
+
 ---
 
 ## Supported Hooks
 
 ### forbid-git-conflicts
+
+<!-- forbid-git-conflicts: off (disable for the below content, without actually
+     displaying this on the readme page. -->
 
 Simple hook which iterates over all staged files to check for any lines that
 have left over Git conflict markers.
